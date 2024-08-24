@@ -4,6 +4,9 @@ import blogController from "../../controllers/blog.controller.js";
 
 const router = Router();
 
-router.route("/").get(authGuard(), blogController.createBlog);
+router
+  .route("/")
+  .post(authGuard(), blogController.createBlog)
+  .get(authGuard(), blogController.getBlogs);
 
 export default router;

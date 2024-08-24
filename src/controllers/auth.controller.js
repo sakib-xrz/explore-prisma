@@ -57,7 +57,9 @@ const createUser = catchAsync(async (req, res) => {
     statusCode: 201,
     success: true,
     message: "User created successful",
-    data: token,
+    data: {
+      access: token,
+    },
   });
 });
 
@@ -100,7 +102,9 @@ const login = catchAsync(async (req, res) => {
     statusCode: 200,
     success: true,
     message: "Login successful",
-    data: token,
+    data: {
+      access: token,
+    },
   });
 });
 
